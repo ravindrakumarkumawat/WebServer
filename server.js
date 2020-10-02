@@ -6,7 +6,7 @@ const app = {
   listen: (port) => {
     server.listen(port, ()=> {
       console.log(`Server Started on -->`, server.address()) // step 3
-      console.log('Server is working...')
+      console.log(`\n\nServer is running on http://localhost:${port}`)
     })
   }
 }
