@@ -1,12 +1,11 @@
-const path = require('path')
-const app = require('./server')
+const server = require('./server')
 
 const serveStatic = require('./staticfiles')
 
-const dir = path.join(__dirname, 'Public')
+const app = server()
 
-const server = app()
+app.use(serveStatic)
 const port = 3000
-server.listen(port, () => {
+app.listen(port, () => {
   console.log(`server is running on ${port}`)
 })
